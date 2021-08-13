@@ -10,5 +10,10 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '11'
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 0.12.25
+    - name: Verify Terraform version
+      run: terraform --version
     - run: javac HelloWorld.java
     - run: java HelloWorld
